@@ -1,0 +1,30 @@
+{
+"szoba" :[
+	{"Nappali":[
+		{"homerseklet": 19}
+		{"lampa": true}
+	]},
+	{"Konyha":[
+		{"homweseklet":20}
+		{"lampa": true}
+	]},
+	{"Gyerekszoba":[
+		{"homweseklet":21}
+		{"lampa": true}
+	]},
+	{"Haloszoba":[
+		{"homweseklet":22}
+		{"lampa": false}
+	]},
+	{"Eloszoba":[
+		{"homweseklet":23}
+		{"lampa": false}
+	]},
+	{"Furdoszoba":[
+		{"homweseklet":24}
+		{"lampa": true}
+	]}
+	
+	]
+	
+}
