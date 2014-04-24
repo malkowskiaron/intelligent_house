@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Test</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_szoba">Szoba</string>
+    <string name="title_activity_tulajdonsagok">Tulajdonsagok</string>
+    <string name="title_activity_nappali">Nappali</string>
+    <string name="tulajdonsag_szoveg">Milyen tulajdonság alapján szeretne keresni, illetve mit szeretne módosítani?</string>
+    <string name="tulajdonsag_lampa">Lámpa</string>
+    <string name="tulajdonsag_futes">Fűtés</string>
+    <string name="udv">Üdvözlöm!</string>
+    <string name="udv2">Mi szerint szeretne keresni?</string>
+    <string name="main_szoba">Szoba</string>
+    <string name="main_tulajdonsagok">Tulajdonságok</string>
+    <string name="szoba">Melyik szoba adataid szeretné lekérdezni, illetve módosítani?</string>
+    <string name="szoba_konyha">Konyha</string>
+    <string name="szoba_eloszoba">Előszoba</string>
+    <string name="szoba_haloszoba">Hálószoba</string>
+    <string name="szoba_nappali">Nappali</string>
+    <string name="szoba_furdoszoba">Fürdőszoba</string>
+    <string name="szoba_gyerekszoba">Gyerekszoba</string>
+    <string name="title_activity_furdoszoba">Furdoszoba</string>
+    <string name="title_activity_eloszoba">Eloszoba</string>
+    <string name="title_activity_gyerekszoba">Gyerekszoba</string>
+    <string name="title_activity_konyha">Konyha</string>
+    <string name="title_activity_haloszoba">Háloszoba</string>
+    <string name="lampa">Lámpa</string>
+    <string name="futes">Fűtés</string>
+    <string name="homerseklet">Hőmérséklet(°C)</string>
+    <string name="title_activity_futes">Futes</string>
+    <string name="title_activity_vilagitas">Vilagitas</string>
+    <string name="kovetkezo">Következő -></string>
+    <string name="elozo">&gt;- Előző </string>
+    <string name="title_activity_futes2">Futes2</string>
+
+</resources>
