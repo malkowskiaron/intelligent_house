@@ -1,13 +1,12 @@
 package com.example;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Nappali extends Activity {
+public class Nappali extends Szoba {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

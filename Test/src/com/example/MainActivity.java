@@ -1,33 +1,70 @@
 package com.example;
 
+import org.json.JSONObject;
+
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
+import android.view.View;
+import android.widget.Button;
+
+import com.conn.Kommunikacio;
+import com.google.gson.Gson;
+import com.pojo.Szobalista;
 
 
 public class MainActivity extends Activity {
 
 	
 	
+	//ezzel jelez az asszinkron h vás, hogy végzett
+	private BroadcastReceiver iratkozas =new BroadcastReceiver(){
+		public void onReceive(android.content.Context context, Intent intent) {
+			Szobalista szobak=new Gson().fromJson(intent.getStringExtra(Kommunikacio.eredmeny), Szobalista.class);
+		};
+	};
+	//szobavalaszto, 
+	public static final String uzenet ="uzenet";
+	
+	//ezzel iratkozik fel
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		LocalBroadcastManager.getInstance(this).registerReceiver(iratkozas, new IntentFilter(uzenet));
+	}
+	
+	//ezzel pedig leiratkozik
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		LocalBroadcastManager.getInstance(this).unregisterReceiver(iratkozas);
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+			
+		
 		
 	    ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
 	    NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
 		    if (wifi.isConnected()) {
-		    
+
+				//lekért adatokból osztályt implemetálni
+				Kommunikacio komm=new Kommunikacio(this);
+				komm.execute();
 		    	}
 		    else{
 		    	AlertDialog.Builder alert= new AlertDialog.Builder(this);
@@ -58,7 +95,7 @@ public class MainActivity extends Activity {
 			b.setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					startActivity(new Intent(MainActivity.this, Szoba.class));
+					startActivity(new Intent(MainActivity.this, SzobaValaszto.class));
 					
 				};
 			});
@@ -66,8 +103,7 @@ public class MainActivity extends Activity {
 			b1.setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					startActivity(new Intent(MainActivity.this, Tulajdonsagok.class));
-					
+  					startActivity(new Intent(MainActivity.this, Tulajdonsagok.class));
 				};
 			});
 		}

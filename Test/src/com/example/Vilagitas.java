@@ -11,10 +11,4 @@ public class Vilagitas extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_vilagitas);
 	}
-<<<<<<< HEAD
-	asda
-=======
->>>>>>> 210bd0beb15298dac890b180f3532ee267fc6068
-
-
 }
