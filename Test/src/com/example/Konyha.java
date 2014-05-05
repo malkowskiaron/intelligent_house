@@ -1,6 +1,7 @@
 package com.example;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -40,4 +41,9 @@ public class Konyha extends Szoba {
 		});
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.konyha, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
 }

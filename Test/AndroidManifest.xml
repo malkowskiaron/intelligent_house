@@ -52,7 +52,7 @@
         </activity>
         <activity
             android:name="com.example.Konyha"
-            android:label="@string/title_activity_konyha" >
+            android:label="" >
         </activity>
         <activity
             android:name="com.example.Haloszoba"

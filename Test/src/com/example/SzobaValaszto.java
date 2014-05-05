@@ -6,14 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.pojo.Szobalista;
+
 public class SzobaValaszto extends Activity {
 
+	public static final String szoba = "szoba";
+	private Szobalista lista ;
+
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_szoba);
 		
-		
+		lista =getIntent().getParcelableExtra(MainActivity.atadas);
 		setupMessageButton();
 	}
 
@@ -22,7 +29,7 @@ public class SzobaValaszto extends Activity {
 		b.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SzobaValaszto.this, Nappali.class));
+				startActivity(new Intent(SzobaValaszto.this, Nappali.class).putExtra(szoba, lista.getSzoba().get(0)));
 				
 			};
 		});

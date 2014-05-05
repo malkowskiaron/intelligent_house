@@ -32,7 +32,7 @@
     <string name="title_activity_futes">Futes</string>
     <string name="title_activity_vilagitas">Vilagitas</string>
     <string name="kovetkezo">Következő -></string>
-    <string name="elozo">&gt;- Előző </string>
+    <string name="elozo">&lt;- Előző </string>
     <string name="title_activity_futes2">Futes2</string>
 
 </resources>
