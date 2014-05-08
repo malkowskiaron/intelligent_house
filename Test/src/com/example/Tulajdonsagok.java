@@ -1,5 +1,7 @@
 package com.example;
 
+import com.pojo.Szobalista;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -8,11 +10,17 @@ import android.view.View;
 import android.widget.Button;
 
 public class Tulajdonsagok extends Activity {
+	
+	public static final String tulajdonsag="tulajdonsag";
+	private Szobalista lista ;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tulajdonsagok);
+		
+		lista =getIntent().getParcelableExtra(MainActivity.atadas);
 		
 		setupMessageButton();
 
@@ -22,7 +30,7 @@ public class Tulajdonsagok extends Activity {
 		b.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Tulajdonsagok.this, Vilagitas.class));
+				startActivity(new Intent(Tulajdonsagok.this, Vilagitas.class).putExtra(tulajdonsag, lista));
 				
 			};
 		});
@@ -30,7 +38,7 @@ public class Tulajdonsagok extends Activity {
 			b1.setOnClickListener(new View.OnClickListener(){
 				@Override
 				public void onClick(View v) {
-					startActivity(new Intent(Tulajdonsagok.this, Futes.class));
+					startActivity(new Intent(Tulajdonsagok.this, Futes.class).putExtra(tulajdonsag, lista));
 					
 				};
 			});

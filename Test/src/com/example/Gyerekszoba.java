@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 
 public class Gyerekszoba extends Szoba {
 
@@ -13,8 +14,17 @@ public class Gyerekszoba extends Szoba {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gyerekszoba);
 
+		homerseklet= ((com.pojo.Szoba) getIntent().getExtras().get(SzobaValaszto.szoba)).getHomerseklet();
+		lampa=((com.pojo.Szoba) getIntent().getExtras().get(SzobaValaszto.szoba)).getLampa();
+
 		
 		final EditText edit = (EditText) findViewById(R.id.gyerekszoba_homerseklet);
+		
+		edit.setText(((Integer)(homerseklet)).toString());
+		Switch lampakapcsolo= (Switch) findViewById(R.id.gyerekszoba);
+		lampakapcsolo.setChecked(lampa);
+
+		
 		Button plus = (Button) findViewById(R.id.plusz);
 		Button minusz = (Button) findViewById(R.id.minusz);
 		

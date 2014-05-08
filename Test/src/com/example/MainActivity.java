@@ -18,6 +18,15 @@ import com.google.gson.Gson;
 import com.pojo.Szobalista;
 
 
+//0:nappali
+//1:Fürdõ
+//2:Konyha
+//3:Elõszoba
+//4:gyerek
+//5:Haloszoba
+
+
+
 public class MainActivity extends Activity {
 
 	private Szobalista szobak= null;
@@ -43,8 +52,8 @@ public class MainActivity extends Activity {
 	    NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 		    if (wifi.isConnected()) {
 
-				//lekért adatokból osztályt implemetálni
-				Kommunikacio komm=new Kommunikacio(this);
+		    	//itt indítja el az asszinkron szálat
+		    	Kommunikacio komm=new Kommunikacio(this);
 				komm.execute();
 		    	}
 		    else{

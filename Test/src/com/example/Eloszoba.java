@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 
 public class Eloszoba extends Szoba {
 
@@ -14,12 +15,18 @@ public class Eloszoba extends Szoba {
 		setContentView(R.layout.activity_eloszoba);
 		
 		//homerseklet
-		
-		//edit.setvalue
+		homerseklet= ((com.pojo.Szoba) getIntent().getExtras().get(SzobaValaszto.szoba)).getHomerseklet();
+		lampa=((com.pojo.Szoba) getIntent().getExtras().get(SzobaValaszto.szoba)).getLampa();
 		
 		final EditText edit = (EditText) findViewById(R.id.eloszoba_homerseklet);
+		
+		edit.setText(((Integer)(homerseklet)).toString());
+		
 		Button plus = (Button) findViewById(R.id.plusz);
 		Button minusz = (Button) findViewById(R.id.minusz);
+		
+		Switch lampakapcsolo= (Switch) findViewById(R.id.eloszoba);
+		lampakapcsolo.setChecked(lampa);
 		
 		plus.setOnClickListener(new OnClickListener() {
 			

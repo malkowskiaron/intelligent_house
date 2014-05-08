@@ -37,7 +37,7 @@ public class SzobaValaszto extends Activity {
 		b1.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SzobaValaszto.this, Furdoszoba.class));
+				startActivity(new Intent(SzobaValaszto.this, Furdoszoba.class).putExtra(szoba, lista.getSzoba().get(1)));
 				
 			};
 		});
@@ -45,7 +45,7 @@ public class SzobaValaszto extends Activity {
 		b2.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SzobaValaszto.this, Konyha.class));
+				startActivity(new Intent(SzobaValaszto.this, Konyha.class).putExtra(szoba, lista.getSzoba().get(2)));
 				
 			};
 		});
@@ -53,7 +53,7 @@ public class SzobaValaszto extends Activity {
 		b3.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SzobaValaszto.this, Eloszoba.class));
+				startActivity(new Intent(SzobaValaszto.this, Eloszoba.class).putExtra(szoba, lista.getSzoba().get(3)));
 				
 			};
 		});
@@ -61,7 +61,7 @@ public class SzobaValaszto extends Activity {
 		b4.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SzobaValaszto.this, Gyerekszoba.class));
+				startActivity(new Intent(SzobaValaszto.this, Gyerekszoba.class).putExtra(szoba, lista.getSzoba().get(4)));
 				
 			};
 		});
@@ -69,7 +69,7 @@ public class SzobaValaszto extends Activity {
 		b5.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(SzobaValaszto.this, Haloszoba.class));
+				startActivity(new Intent(SzobaValaszto.this, Haloszoba.class).putExtra(szoba, lista.getSzoba().get(5)));
 				
 			};
 		});

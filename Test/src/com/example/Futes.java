@@ -1,5 +1,7 @@
 package com.example;
 
+import com.pojo.Szobalista;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -11,23 +13,43 @@ import android.widget.TextView;
 
 public class Futes extends Activity {
 
+	public static final String tulajdonsag="tulajdonsag";
+	private Szobalista lista ;
+	private Szobalista lista2;
+	private Integer haloszoba_h, eloszoba_h, konyha_h;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_futes);
+		if((lista =getIntent().getParcelableExtra(Tulajdonsagok.tulajdonsag))==null){
+			lista2=getIntent().getParcelableExtra(Futes2.tulajdonsag);
+			haloszoba_h= lista2.getSzoba().get(5).getHomerseklet();
+			konyha_h =lista2.getSzoba().get(2).getHomerseklet();
+			eloszoba_h =lista2.getSzoba().get(3).getHomerseklet();
+		}
+		else{
+		haloszoba_h= lista.getSzoba().get(5).getHomerseklet();
+		konyha_h =lista.getSzoba().get(2).getHomerseklet();
+		eloszoba_h =lista.getSzoba().get(3).getHomerseklet();
+		}
+
 		
 		//haloszoba
 		final EditText haloszoba = (EditText) findViewById(R.id.haloszoba_homerseklet);
+		haloszoba.setText(haloszoba_h.toString());
 		Button haloszoba_plusz = (Button) findViewById(R.id.haloszoba_plusz);
 		Button haloszoba_minusz = (Button) findViewById(R.id.haloszoba_minusz);
 		
 		//konyha
 		final EditText konyha = (EditText) findViewById(R.id.konyha_homerseklet);
+		konyha.setText(konyha_h.toString());
 		Button konyha_plusz = (Button) findViewById(R.id.konyha_plusz);
 		Button konyha_minusz = (Button) findViewById(R.id.konyha_minusz);
 		
 		//Eloszoba
 		final EditText eloszoba = (EditText) findViewById(R.id.eloszoba_homerseklet);
+		eloszoba.setText(eloszoba_h.toString());
 		Button eloszoba_plusz = (Button) findViewById(R.id.eloszoba_plusz);
 		Button eloszoba_minusz = (Button) findViewById(R.id.eloszoba_minusz);
 		
@@ -36,7 +58,7 @@ public class Futes extends Activity {
 		kov.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Futes.this, Futes2.class));
+				startActivity(new Intent(Futes.this, Futes2.class).putExtra(tulajdonsag, lista));
 
 			};
 		});
